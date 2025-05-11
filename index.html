@@ -2,65 +2,132 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Teste ABO</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to bottom right, #d7c8f8, #cbeafd);
       color: #333;
-      padding: 20px;
+      padding: 15px;
+      min-height: 100vh;
+      -webkit-text-size-adjust: 100%;
     }
+    
     .container {
-      max-width: 600px;
-      margin: auto;
+      max-width: 100%;
+      width: 100%;
+      margin: 0 auto;
       background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
+    
     h1 {
       text-align: center;
       color: #7b5fc1;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
     }
+    
     .question {
-      margin-top: 20px;
+      margin-top: 15px;
     }
+    
+    .question p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+    
     .options {
       margin-top: 10px;
     }
+    
     .option {
       display: block;
-      margin: 8px 0;
+      margin: 10px 0;
       background: #f2f2f2;
-      padding: 10px;
+      padding: 12px 15px;
       border-radius: 10px;
       cursor: pointer;
-      transition: 0.2s;
+      transition: all 0.2s;
+      font-size: 0.95rem;
+      line-height: 1.4;
     }
-    .option:hover {
+    
+    .option:hover, .option:active {
       background: #e0d6f2;
     }
+    
     .result {
       display: none;
-      margin-top: 30px;
+      margin-top: 25px;
       text-align: center;
+      padding: 15px;
     }
+    
     .result h2 {
       color: #5e3fa2;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
     }
-    .hidden { display: none; }
+    
+    .result ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+    
+    .result li {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+    
     button {
       background: #a68ae2;
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 25px;
       border-radius: 10px;
       cursor: pointer;
-      margin-top: 20px;
+      margin: 20px auto 0;
+      display: none;
+      width: 100%;
+      max-width: 250px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.2s;
     }
-    button:hover {
+    
+    button:hover, button:active {
       background: #8d6cd2;
+    }
+    
+    @media (min-width: 600px) {
+      .container {
+        max-width: 600px;
+        padding: 30px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .question p {
+        font-size: 1.2rem;
+      }
+      
+      .option {
+        font-size: 1rem;
+        padding: 15px 20px;
+      }
     }
   </style>
 </head>
@@ -117,87 +184,6 @@
           { text: "Ter uma vida tranquila e sem muitos conflitos.", alpha: 0, beta: 1, omega: 0 },
           { text: "Cuidar de quem amo e formar um vínculo forte.", alpha: 0, beta: 0.2, omega: 1 },
           { text: "Equilibrar trabalho e vida pessoal, com algum tempo para mim.", alpha: 0.5, beta: 0.5, omega: 0.5 }
-        ]
-      },
-      {
-        question: "Como você se sente em relação ao amor?",
-        options: [
-          { text: "O amor é uma conquista, preciso ser o dominante.", alpha: 1, beta: 0, omega: 0 },
-          { text: "Amo com lealdade e dedicação, gosto de igualdade.", alpha: 0.5, beta: 0.5, omega: 0 },
-          { text: "O amor é essencial para minha felicidade e conforto.", alpha: 0, beta: 0.2, omega: 1 },
-          { text: "Amo de forma independente, sem pressão de status.", alpha: 0.4, beta: 0.6, omega: 0.5 }
-        ]
-      },
-      {
-        question: "Qual é a sua reação quando alguém te dá um presente?",
-        options: [
-          { text: "Agradeço e fico feliz com o gesto.", alpha: 0.5, beta: 0.5, omega: 0 },
-          { text: "Me sinto confortável e aceito com facilidade.", alpha: 0, beta: 0.8, omega: 0.2 },
-          { text: "Fico mais desconfiado e tento analisar as intenções.", alpha: 0.7, beta: 0.3, omega: 0 },
-          { text: "Aprecio, mas não me importa muito o presente em si.", alpha: 0.2, beta: 0.7, omega: 0.5 }
-        ]
-      },
-      {
-        question: "Como você lida com a necessidade de espaço pessoal?",
-        options: [
-          { text: "Preciso de bastante espaço, não gosto de ser invadido.", alpha: 0.6, beta: 0.3, omega: 0.1 },
-          { text: "Sou flexível, mas preciso de momentos para mim.", alpha: 0.4, beta: 0.5, omega: 0.3 },
-          { text: "Adoro estar rodeado de pessoas, não me sinto confortável sozinho.", alpha: 0, beta: 0.4, omega: 0.1 },
-          { text: "Sou muito fechado e preciso de bastante espaço para respirar.", alpha: 0.7, beta: 0.2, omega: 0.7 }
-        ]
-      },
-      {
-        question: "O que é mais importante para você em um relacionamento?",
-        options: [
-          { text: "O respeito mútuo e a segurança emocional.", alpha: 0.7, beta: 0.2, omega: 0.1 },
-          { text: "A liberdade e a independência de ambos.", alpha: 0.3, beta: 0.5, omega: 0.2 },
-          { text: "O apoio incondicional e o conforto emocional.", alpha: 0.2, beta: 0.3, omega: 0.7 },
-          { text: "A cumplicidade e a igualdade de direitos e deveres.", alpha: 0.5, beta: 0.5, omega: 0 }
-        ]
-      },
-      {
-        question: "Quando está com raiva, como reage?",
-        options: [
-          { text: "Perco a paciência e me imponho, tentando resolver logo.", alpha: 1, beta: 0, omega: 0 },
-          { text: "Me fecho e fico mais introspectivo.", alpha: 0.1, beta: 0.7, omega: 0.6 },
-          { text: "Procuro desabafar e pedir apoio para alguém próximo.", alpha: 0, beta: 0.5, omega: 0.6 },
-          { text: "Tento controlar e canalizar minha raiva de forma mais estratégica.", alpha: 0.4, beta: 0.6, omega: 0.0 }
-        ]
-      },
-      {
-        question: "Como você se comporta quando alguém mais fraco que você precisa de ajuda?",
-        options: [
-          { text: "Eu tomo a liderança e ofereço ajuda de forma direta.", alpha: 1, beta: 0, omega: 0 },
-          { text: "Ajudaria, mas de forma discreta, sem chamar muita atenção.", alpha: 0.5, beta: 0.5, omega: 0 },
-          { text: "Sempre dou apoio, tentando acolher de forma genuína.", alpha: 0, beta: 0.3, omega: 0.7 },
-          { text: "Fico hesitante, mas eventualmente ajudo se me pedirem.", alpha: 0.4, beta: 0.6, omega: 0.2 }
-        ]
-      },
-      {
-        question: "O que você pensa sobre a autoridade?",
-        options: [
-          { text: "A autoridade é necessária para manter a ordem.", alpha: 0.8, beta: 0.2, omega: 0 },
-          { text: "Aceito a autoridade, mas gosto de questionar quando necessário.", alpha: 0.5, beta: 0.5, omega: 0 },
-          { text: "Não me importo muito com autoridade, prefiro autonomia.", alpha: 0.3, beta: 0.6, omega: 0.2 },
-          { text: "Prefiro evitar qualquer tipo de autoridade, não gosto de ser controlado.", alpha: 0.2, beta: 0.7, omega: 0.3 }
-        ]
-      },
-      {
-        question: "Você costuma tomar a iniciativa em situações novas?",
-        options: [
-          { text: "Sim, gosto de ser o primeiro a agir.", alpha: 1, beta: 0, omega: 0 },
-          { text: "Depende da situação, mas prefiro esperar e analisar.", alpha: 0.5, beta: 0.5, omega: 0 },
-          { text: "Não, prefiro seguir o fluxo e observar primeiro.", alpha: 0, beta: 0.7, omega: 0.3 },
-          { text: "Às vezes tomo a iniciativa, outras fico mais retraído.", alpha: 0.4, beta: 0.6, omega: 0.2 }
-        ]
-      },
-      {
-        question: "Como você lida com desafios inesperados?",
-        options: [
-          { text: "Encaro de frente, sem hesitar.", alpha: 1, beta: 0, omega: 0 },
-          { text: "Tento contornar e achar uma solução mais calma.", alpha: 0.4, beta: 0.5, omega: 0.2 },
-          { text: "Fico ansioso, mas tento pedir ajuda se necessário.", alpha: 0.2, beta: 0.5, omega: 0.3 },
-          { text: "Fico desconfortável e tento evitar ao máximo.", alpha: 0.3, beta: 0.6, omega: 0.7 }
         ]
       },
       {
@@ -338,6 +324,9 @@
           ).join('')}
         </div>
       `;
+      
+      // Esconde o botão de resultado durante o quiz
+      document.getElementById("submit").style.display = 'none';
     }
 
     function selectOption(index) {
@@ -351,7 +340,10 @@
       if (currentQuestion < questions.length) {
         displayQuestion();
       } else {
-        showResult();
+        // Mostra o botão apenas na última pergunta
+        document.getElementById("submit").style.display = 'block';
+        // Rola a tela para o botão
+        document.getElementById("submit").scrollIntoView({ behavior: 'smooth' });
       }
     }
 
@@ -376,11 +368,18 @@
       `;
       document.getElementById("submit").style.display = 'none';
       result.style.display = 'block';
+      // Rola a tela para o resultado
+      result.scrollIntoView({ behavior: 'smooth' });
     }
 
+    // Mostra a primeira pergunta ao carregar a página
+    displayQuestion();
+
+    // Configura o evento do botão
     document.getElementById("submit").addEventListener('click', showResult);
 
-    displayQuestion();
+    // Configura a função selectOption para ser acessível globalmente
+    window.selectOption = selectOption;
   </script>
 </body>
 </html>
