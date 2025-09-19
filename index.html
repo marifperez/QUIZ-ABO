@@ -269,7 +269,7 @@
           { text: "Joga tudo num braço só. Orgulho.", alpha: 1, beta: 0.3, omega: 0 },
           { text: "Divide bem o peso. Pensa na lombar.", alpha: 0.3, beta: 1, omega: 0.3 },
           { text: "Já pede ajuda antes de tentar.", alpha: 0, beta: 0.3, omega: 1 },
-          { text: "Carrego firme, mas sem me exibir.", alpha: 0.7, beta: 0.3, omega: 0 }
+          { text: "Carrego firme, mas sans me exibir.", alpha: 0.7, beta: 0.3, omega: 0 }
         ]
       },
       {
@@ -322,16 +322,29 @@
     let currentQuestion = 0;
     let score = { alpha: 0, beta: 0, omega: 0 };
 
+    // Função para embaralhar array (algoritmo Fisher-Yates)
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
     function displayQuestion() {
       const question = questions[currentQuestion];
       const quizContainer = document.getElementById("quiz");
+      
+      // Embaralhar as opções antes de exibir
+      const shuffledOptions = shuffleArray([...question.options]);
+      
       quizContainer.innerHTML = `
         <div class="question">
           <p>${question.question}</p>
         </div>
         <div class="options">
-          ${question.options.map((option, index) => 
-            `<div class="option" onclick="selectOption(${index})">${option.text}</div>`
+          ${shuffledOptions.map((option, index) => 
+            `<div class="option" onclick="selectOption(${index}, ${JSON.stringify(option).replace(/"/g, '&quot;')})">${option.text}</div>`
           ).join('')}
         </div>
       `;
@@ -339,9 +352,7 @@
       document.getElementById("submit").style.display = 'none';
     }
 
-    function selectOption(index) {
-      const question = questions[currentQuestion];
-      const option = question.options[index];
+    function selectOption(index, option) {
       score.alpha += option.alpha;
       score.beta += option.beta;
       score.omega += option.omega;
@@ -386,5 +397,3 @@
 
 </body>
 </html>
-
-
