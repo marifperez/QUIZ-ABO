@@ -144,10 +144,10 @@
       {
         question: "Você está em um grupo novo. Como age?",
         options: [
-          { text: "Tento liderar naturalmente.", alpha: 1, beta: 0, omega: 0 },
+          { text: "Ajo naturalmente, flao a minha quantidade habitual.", alpha: 1, beta: 0, omega: 0 },
           { text: "Fico observando antes de agir.", alpha: 0.3, beta: 1, omega: 0.3 },
           { text: "Só quero que gostem de mim.", alpha: 0, beta: 0.2, omega: 1 },
-          { text: "Depende do dia, às vezes tomo a frente, às vezes me isolo.", alpha: 0.5, beta: 0.5, omega: 0.5 },
+          { text: "Depende do dia, às vezes me isolo.", alpha: 0.5, beta: 0.5, omega: 0.5 },
           { text: "Posso interagir, mas no meu tempo. Observo antes de falar.", alpha: 0.7, beta: 0.3, omega: 0 }
         ]
       },
@@ -164,11 +164,21 @@
       {
         question: "Como você lida com situações estressantes?",
         options: [
-          { text: "Tento tomar o controle, me impondo.", alpha: 1, beta: 0, omega: 0 },
+          { text: "Tento tomar o controle.", alpha: 1, beta: 0, omega: 0 },
           { text: "Me isolo até conseguir pensar direito.", alpha: 0.2, beta: 1, omega: 0 },
           { text: "Tento encontrar conforto e apoio de quem confio.", alpha: 0, beta: 0.4, omega: 1 },
           { text: "Procuro ajudar os outros ao mesmo tempo que me preocupo comigo.", alpha: 0.5, beta: 0.5, omega: 0.3 },
-          { text: "Respiro fundo, penso, e só depois assumo o controle.", alpha: 0.7, beta: 0.3, omega: 0 }
+          { text: "Respiro fundo, penso, e só depois tomo decisões.", alpha: 0.7, beta: 0.3, omega: 0 }
+        ]
+      },
+            {
+        question: "Como você eh competitivo?",
+        options: [
+          { text: "Extremamente.", alpha: 1, beta: 0, omega: 0 },
+          { text: "Nao me importo muito em ganhar.", alpha: 0.2, beta: 1, omega: 0 },
+          { text: "Depende do que se trata, mas tento nao demosntrar.", alpha: 0, beta: 0.4, omega: 1 },
+          { text: "Levemente, gosto de ganhar mas n me importo em perder.", alpha: 0.5, beta: 0.5, omega: 0.3 },
+          { text: "Nao gosto de perder.", alpha: 0.7, beta: 0.3, omega: 0 }
         ]
       },
       {
@@ -179,16 +189,6 @@
           { text: "Me defendo com palavras, mas não gosto de brigas físicas.", alpha: 0.3, beta: 0.7, omega: 0 },
           { text: "Depende da situação, posso reagir ou ficar quieto.", alpha: 0.5, beta: 0.5, omega: 0.5 },
           { text: "Encaro, mas de forma discreta, sem cena.", alpha: 0.7, beta: 0.3, omega: 0 }
-        ]
-      },
-      {
-        question: "Qual a sua prioridade?",
-        options: [
-          { text: "Liderar e garantir que todos me respeitem.", alpha: 1, beta: 0, omega: 0 },
-          { text: "Ter uma vida tranquila e sem muitos conflitos.", alpha: 0, beta: 1, omega: 0 },
-          { text: "Cuidar de quem amo e formar um vínculo forte.", alpha: 0, beta: 0.2, omega: 1 },
-          { text: "Equilibrar trabalho e vida pessoal, com algum tempo para mim.", alpha: 0.5, beta: 0.5, omega: 0.5 },
-          { text: "Conquistar o que quero, mas mantenod minha paz.", alpha: 0.7, beta: 0.3, omega: 0 }
         ]
       },
       {
@@ -221,10 +221,10 @@
       {
         question: "Forma favorita de usar fone:",
         options: [
-          { text: "Um só no ouvido, alto.", alpha: 1, beta: 0.3, omega: 0 },
+          { text: "Dois fones no ouvido, alto.", alpha: 1, beta: 0.3, omega: 0 },
           { text: "Dois fones, volume médio.", alpha: 0.3, beta: 1, omega: 0.3 },
-          { text: "Fone + capuz. Modo isolamento ativado.", alpha: 0, beta: 0.3, omega: 1 },
-          { text: "Dois fones, volume baixo, curtindo na minha.", alpha: 0.7, beta: 0.3, omega: 0 }
+          { text: "Fone no volume baixo, ainda aouvino ao redor.", alpha: 0, beta: 0.3, omega: 1 },
+          { text: "Um fone só no ouvido, volume alto.", alpha: 0.7, beta: 0.3, omega: 0 }
         ]
       },
       {
@@ -257,19 +257,19 @@
       {
         question: "Andando com grupo na multidão:",
         options: [
-          { text: "Puxa o bonde, vai na frente.", alpha: 1, beta: 0.3, omega: 0 },
+          { text: "Ando na frente.", alpha: 1, beta: 0.3, omega: 0 },
           { text: "Fica no meio, equilibrando o fluxo.", alpha: 0.3, beta: 1, omega: 0.3 },
-          { text: "Vai atrás, bem colado, com medo de se perder.", alpha: 0, beta: 0.3, omega: 1 },
-          { text: "Caminho atrás, andando tranquilo.", alpha: 0.7, beta: 0.3, omega: 0 }
+          { text: "Vai no meio, colado em alguem, com medo de se perder.", alpha: 0, beta: 0.3, omega: 1 },
+          { text: "Caminho atrás, andando tranquilo.", alpha: 0.8, beta: 0.2, omega: 0 }
         ]
       },
       {
-        question: "Segurando sacola pesada:",
+        question: "Segurando sacola pesada e algueme sta olhando:",
         options: [
           { text: "Joga tudo num braço só. Orgulho.", alpha: 1, beta: 0.3, omega: 0 },
-          { text: "Divide bem o peso. Pensa na lombar.", alpha: 0.3, beta: 1, omega: 0.3 },
+          { text: "Divide bem o peso. Nao tem porque me esforçar muito.", alpha: 0.3, beta: 1, omega: 0.3 },
           { text: "Já pede ajuda antes de tentar.", alpha: 0, beta: 0.3, omega: 1 },
-          { text: "Carrego firme, mas sans me exibir.", alpha: 0.7, beta: 0.3, omega: 0 }
+          { text: "Carrego firme, mas sem me exibir.", alpha: 0.7, beta: 0.3, omega: 0 }
         ]
       },
       {
@@ -284,7 +284,7 @@
       {
         question: "Tá chovendo forte e você precisa sair:",
         options: [
-          { text: "Dane-se. Vou molhado mesmo.", alpha: 1, beta: 0.3, omega: 0 },
+          { text: "Dane-se, coloca uma blusa e vai.", alpha: 1, beta: 0.3, omega: 0 },
           { text: "Tenta se proteger com o que der.", alpha: 0.3, beta: 1, omega: 0.3 },
           { text: "Pânico. Guarda-chuva, sacola no pé, tudo.", alpha: 0, beta: 0.3, omega: 1 },
           { text: "Pego uma capa ou guarda-chuva e sigo normal.", alpha: 0.7, beta: 0.3, omega: 0 }
@@ -305,7 +305,7 @@
           { text: "Tira e posta. Confia no carão.", alpha: 1, beta: 0.3, omega: 0 },
           { text: "Escolhe o melhor ângulo. Edita levemente.", alpha: 0.3, beta: 1, omega: 0.3 },
           { text: "Tira 15. Odeia todas. Não posta nada.", alpha: 0, beta: 0.3, omega: 1 },
-          { text: "Nao tiro fotos.", alpha: 0.7, beta: 0.3, omega: 0 }
+          { text: "Nao tiro fotos.", alpha: 1, beta: 0.3, omega: 0 }
         ]
       },
       {
@@ -314,7 +314,7 @@
           { text: "Responde na hora. 'E aí, bora?'", alpha: 1, beta: 0.3, omega: 0 },
           { text: "Agradece, pensa um pouco antes de responder.", alpha: 0.3, beta: 1, omega: 0.3 },
           { text: "Trava. Começa a rir. Depois foge.", alpha: 0, beta: 0.3, omega: 1 },
-          { text: "Respondo sincero, mas com calma.", alpha: 0.7, beta: 0.3, omega: 0 }
+          { text: "Pensa e respondo sincero, mas com calma.", alpha: 1, beta: 0.3, omega: 0 }
         ]
       }
     ];
@@ -397,3 +397,4 @@
 
 </body>
 </html>
+
